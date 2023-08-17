@@ -1,0 +1,70 @@
+DQL--
+
+SELECT DISTINCT/ALL */column1, column2/MIN(column)/MAX(column)/COUNT(column)/AVG(column)/SUM(column)/AS alias_name
+INTO newtable [IN externaldb]
+FROM table_name AS alias_name
+HAVING condition/WHERE condition1 AND/OR/NOT condition2...column1 IS NULL/IS NOT NULL/LIKE pattern/IN (value1, value2, ...)/BETWEEN value1 AND value2/EXISTS/ANY/ALL
+GROUP BY column_name(s)
+ORDER BY column1, column2, ... ASC|DESC;
+LIMIT n;
+
+
+DML--
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+DELETE FROM table_name 
+WHERE condition;
+
+
+DDL--
+
+CREATE/DROP DATABASE testDB;
+
+CREATE TABLE table_name (
+    column1 datatype NOT NULL/UNIQUE/DEFAULT/CREATE INDEX/AUTO_INCREMENT,
+    column2 datatype,
+    ....
+    CONSTRAINT/PRIMARY KEY()/FOREIGN KEY()/CHECK()
+);
+
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+
+DROP TABLE table_name;
+
+ALTER TABLE table_name
+ALTER column CONSTRAINT/ADD (constraint/Email varchar(255))/DROP COLUMN column_name/MODIFY COLUMN column_name (CONSTRAINT/datatype)/RENAME COLUMN old_name to new_name/DROP (CONSTRAINT/INDEX index_name);
+
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+
+
+STATEMENT:
+In a simple language, an SQL statement is a complete piece of code that will either make changes to the database or returns a result.
+
+CLAUSE:
+Clauses are meaningful parts of an SQL statement.
+WHERE
+HAVING
+GROUP BY
+
+Operator:
+ALL		
+AND	
+ANY	
+BETWEEN	
+EXISTS	
+IN
+LIKE	
+NOT	
+OR
+SOME
